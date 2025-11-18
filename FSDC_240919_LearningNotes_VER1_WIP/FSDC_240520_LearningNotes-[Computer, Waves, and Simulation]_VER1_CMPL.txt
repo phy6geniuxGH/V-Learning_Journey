@@ -1,0 +1,727 @@
+- 240520 - Numerical Methods in Python - Coursera - Week 1
+	---------------------------------------------
+	W1V1 - General Introduction
+	- Discretization (spatial and temporal)
+	- Computational meshes and grids
+	- Parallel computing
+	- Python and Jupyter Notebooks
+	- Fundamental Methods
+	- Finite Difference Method
+	---------------------------------------------
+	W1V2 - Spatial Scales and Meshing
+	- c/f = lambda, grid size = 10 grid points/lambda, total grid count = Volume/grid size
+	- finite element, spectral element method
+	---------------------------------------------
+	W1V3 - Waves in a discrete world
+	- Acoustic wave equation
+	- Dispersion relation
+	- Discrimant - parabolic, elliptical, hyperbolic
+	---------------------------------------------
+	W1V4 - Parallel Simulations
+	S - Single, M - Multiple, I - Instruction, D - Data
+	- SISD - Serial Computers
+	- MISD - Cryptographic decoding
+	- SIMD - GPU cluster, CM2
+	- MIMD - Supercomputers, PC Cluster
+	- Distributed, Shared, Hybrid Dist-Shared Memory
+	- MPI - Message-Passing Interface - library for Python
+	- Parallelization:
+		P = fraction of the code that can be parallelized
+		S = serial fraction
+		n = number of processors
+		speed_up = 1/[(P/n) + S]
+	- Demonstrate that your algorithm is efficiently scaling.
+		- Example: 100,000 cpu ~ 100,000x faster than using 1 cpu.
+	---------------------------------------------
+	W1V5 - A bit of wave physics
+	- Wave equation (pressure)
+	- Analytical solutions
+	- Impulse response
+	- Green's function
+	- Homogeneous medium
+		- c is independent of space
+		- analytical solutions for comparison to numerical solutions
+	- Elastic Waves
+		- u - displacement
+		- rho and mu - spatial-invariant
+	- Plane wave
+	- Wave equation is symmetric through time
+	- Time-reversal
+	- Structural heterogeneities
+		- varations of parameters (c, rho, mu)
+	- G(t) conv s(t) - Convolutions, filtered 
+	- The PDE and Numel Soln can be treated as a linear system (Green's functions, convolutionw with source-time functions.)
+	---------------------------------------------
+	Quiz: 96.80%
+		- Create solution
+	---------------------------------------------
+
+- 240521 - Numerical Methods in Python - Coursera - Week 2
+	---------------------------------------------
+	W2V1 - Introduction
+	- Finite-Difference Method
+		- Grid Method
+		- Discretization of space and time
+		- Replacement of partial derivatices
+		- use information form adjacent grid points
+		- brute force approach
+		- Easy method -> quick adaptation to problems
+	---------------------------------------------
+	W2V2 - Definitions
+	- Definitions of a derivative
+		- Forward Difference
+		- Cetnral Difference
+		- Backward Difference
+	- How good is the approximation?
+		- Perform Taylor approximation, expansion, series check!
+	----------------------------------------------
+	W2V3 - Taylor Series
+	- f(x + dx) = \sum^\inf_{n=0} \dfrac{1}{n!}\partial_x^n f dx^n
+	- [f(x + dx) - f(x)]/dx \approx f' + O(dx) (higher order error correction terms)
+		- finite-difference derivative approximation accurate to first order
+	- Second-order derivatives:
+		- \dfrac{d^2f}{dx^2} = \dfrac{f(x+dx) - 2f(x) + f(x-dx)}{dx^2}
+	---------------------------------------------- 
+	W2V4 - Python: First Derivative
+	- Jupyter Notebook
+		- Comparing the numerical and analytical derivatives of sine functions and plotting the results
+		- Calculating errors vs. grid resolution - convergence study
+	----------------------------------------------
+	W2V5 - Operators
+	- Getting a matrix of coefficients to solve for the derivative: Derivative matrices
+		- Three-point operator - (a,b,c)
+		- Aw = s, w = \inv(A) s
+	----------------------------------------------
+	W2V6 - High Order
+	- Five-point operator - (a,b,c,d,e)
+		- 5 x 5 Matrix
+		- Derivative accurate to 4th order
+	----------------------------------------------
+	W2V7 - Python: High Order
+	- Jupyter Notebook
+		- Comparing three and five point operators in getting more accurate FDM simulations
+		- Function: Gaussian
+		- Accuracy improvement: 3 vs. 5-point operator
+	----------------------------------------------
+	W2V8 - Summary
+	- Finite-difference operators for derivative approximation
+	- Improvement of the accuracy of FD-operators
+	- Quantification of the order term error
+	---------------------------------------------
+	Quiz: 95.83%
+		- Create solution
+	---------------------------------------------
+- 240522 - Numerical Methods in Python - Coursera - Week 3
+	---------------------------------------------
+	W3V1 - Wave Equation
+	- Acoustic/scalar wave equation (1D)
+		- \partial_t^2 p(x_,t) = c(x)^2 \nabla p(x_,t) + s(x_,t)
+			p(x_, t) = pressure
+			s = source term
+			\nabla = (\partial^2_x + \partial^2_y + \partial^2_z)p
+	- Propagation of sound waves
+	
+	---------------------------------------------
+	W3V2 - Algorithm
+	- Discretization
+		x_j = jdx, j = [0, j_max]
+		t_n = ndt, n = [0, n_max]
+
+	- Consequence for fields
+		p(x,t) (continuous) -> p_j^n (discrete)
+		p(x_j, t_n + dt) (continuous) -> p_j^n+1 (discrete)
+	- Finite difference Algorithm
+		\dfrac{p^{n+1}_{j} -2p^{n}_{j} + p^{n-1}_{j}}{dt^2} 
+				= c_j^2 \left[ \dfrac{p^{n}_{j+1} -2p^{n}_{j} + p^{n}_{j-1}}{dx^2} \right] + s^{n}_{j}
+		-> 3 time levels (n-1, n, n+1)
+	- Extrapolation problem
+		p^{n+1}_j = {...} fully-explicit scheme
+		solves the future by knowing the present and past
+	---------------------------------------------
+	W3V3 - Boundaries, Sources
+	- Boundary conditions
+		p(x = 0, t) = 0
+		p(x = x_max, t) = 0
+	- Initial conditions
+		p(x,t=0) = 0 (at rest)
+		\partial_t p(x, t = 0) = 0 (at rest)
+	- Source term
+		Delta function
+		- boxcar \delta-generating function	
+		- gaussian \delta-generating function 
+		integrals of both functions goes to 1
+	- Source time function
+		- s(x,t) = \delta(x - x_s)f(t)
+		- 1st derivative of Gaussian function
+			f_0 - dominant frequency
+			Resulting signal is an integral of the source time function:
+			If source-time function is 1st derivative of gaussian, the integral is the gaussian itself, which is the signal.
+
+	---------------------------------------------
+	W3V4 - Initialization
+	- Appropriate sampling in time!
+	---------------------------------------------
+	W3V5 - Python: Waves in 1D
+	- Jupyter Notebook
+		- 
+	---------------------------------------------
+	W3V6 - Analytical Solutions
+	- Find analytical solutions of the acoustic wave eqn 
+	- comparison with numerical simulations 
+	- Quantification of the difference
+	- error
+	- source-less AWE
+		- 0.5 p0 (ct-x) + 0.5p_0(ct-x)
+	- source term s(x,t)
+		- Greens function to find analytical solutions
+	Delta functions
+		- solution:  Greens function G(x,t;x0,t0)
+		Heaviside function (step function)
+		Convolutions G(x,x0)*f(x)^-1
+	---------------------------------------------
+	W3V7 - Waves in 1D
+	- Benchmarking - testing numerical vs. analytical
+	---------------------------------------------
+	W3V8 - Von Neumann Analysis
+	- Error behaviour
+	- Disintegration of pulse (dispersion)
+	- Explosion of solution
+	- John von Neumann
+	- Complex numbers, Euler equation 
+	- Dispersion relation
+	- Numerical dispersion:
+		sin (\omega dt/2) = c dt/dx sin(k dx/2) 
+		Courant-Friedrich-Lewy Criterion (CFL): c(dt/dx) <= \epsilon = 1
+			c = physical velocity
+			dx/dt = grid velocity
+			epsilon depends on:
+				- dimensionality
+				- numerical method 
+			dt derived from CFL Criterion
+		Statble solution is not necessarily accurate
+	- Sampling theorem
+		Nyquist wavelength
+			lambda_Ny = 2dx
+	- Numerical dispersion has to be avoided by all means!
+	- Discretization scheme must lead to accurate representation of velocity
+	- dx -> 0, dt->
+		sin(x) approx x for small x
+		sin^-1 (x) approx x for small x
+			Numerical scheme is convergent
+			c = c_exact
+			We can recover the analytical solution
+	---------------------------------------------
+	W3V9 - Summary
+	- Finite difference approximation of acoustic wave equation
+	- Simulations: Explosion and Dispersion (need to be avoided)
+	- von Neumann Analysis
+		- Courant-Friedrich-Lewy Criterion (CFL): c(dt/dx) <= \epsilon = 1
+	---------------------------------------------
+	Quiz: 97%
+		- Create solution
+	---------------------------------------------
+
+- 240523 - Numerical Methods in Python - Coursera - Week 4
+	---------------------------------------------
+	W4V1 - Acoustic Waves 2D - Analytical Solution
+	- 3D wave equation to 2D wave equation (x,y,z,y) -> (x,z,t)
+		Conversion to 2D requires all fields to be independent of one particular direction
+		Independent of y -> 2D 
+		point source -> line source 
+	- Wave equation in 2D 
+		\partial^2_t p(x,z,t) = c^2(x,z) [\partial^2_x p(x,z,t) + \partial^2_z p(x,z,t)] + s(x,z,t)
+			-> Finite difference approximation
+			- What is the analytical solution for a point source?
+				-> Solution to the Greens Function
+						(p replaced by G)
+			- The point source becomes a line source
+	---------------------------------------------
+	W4V2 - Acoustic Waves 2D - Finite Difference Algorithm
+	- continuous -> discrete
+	- p(x,z,t) -> p^{n}_{j,k} = p(jdx, kdz, ndt)
+	- c(x,z) -> c_{j,k} = c(jdx, kdz)
+	- s(x,z,t) -> s^{n}_{j,k} = s(jdx, kdz, ndt)
+		- dx = dz
+	- Second space-time derivative (central derivative)
+		example:
+			[P^{n}_{j, k+1} - 2P^{n}_{j,k} + P^{n}_{j, k-1}]/2 for z-coordinate
+	---------------------------------------------
+	W4V3 - Python: Acoustic Waves 2D
+	- Jupyter Notebook
+	---------------------------------------------
+	W4V4 - Acoustic Waves 2D - von Neumann Analysis
+	- Wavenumber k(x,z) 
+		Error of the phase velocity as a function of propagation direction alpha
+		as npts increases, the error decreases.
+		errors along the coordinate axis are high, unlike at directions of 45 deg
+		Numerical anisotropy - avoid 
+		Physical anisotropy - requires sufficient number of grid points per wavelength
+	---------------------------------------------
+	W4V5 - Acoustic Waves 2D - Waves in a Fault Zone
+	- 2D Model
+		Simulation setup - 10 km x 10 km, 200 m gap
+		cmax = 3000 m/s
+		cmin = 2250 m/s 
+		seismogram length t= 3.5 s 
+		f_dominant = 10 Hz
+		f_max = 30 Hz 
+		min_lambda = cmin/fmax = 75 m 
+		source: 5 km below
+		dominant_lambda = cmin/f_dominant = 225 m, 20 dominant wavelengths
+			20 grid points per wavelength
+			225/20 = 11.24 -> grid increment dx = dz
+		#of grid points per axis: 10000/11.25 = 900 grid points
+		total # of grid points: 900^2 for one field (time)
+			Double precision number: 8 bytes
+				memory requirement: 900^2 * 8 bytes * 6 space dependent fields 
+					= 40 MB
+		Time Increment:
+			CFL: c_max dt/dx < epsilon = 0.7, c_max = 3000 m/s 
+			dt = 0.0026 s 
+			t = 3.5 s / dt = 1300 time grid point
+		BC:
+			p = 0 -> fully reflecting
+
+	---------------------------------------------
+	W4V6 - Python: Waves in a Fault Zone
+	- Jupyter notebook
+		- finer mesh -> convergence test 
+	---------------------------------------------
+	W4V7 - Elastic Wave Equation - Staggered Grids
+	- Scalar wave equation in 1D and 2D 
+		Sound propagation
+	- Elastic wave equation in 1D
+		motion of a string 
+	Stresses and the shear modulus
+		Strees strain relation
+			sigma = mu \partial_x u_y
+			sigma -> stress 
+			mu -> shear modulus 
+			strain -> strain 
+	Elastic Wave Equation in 1D
+		\rho \partial^2_t u_y = \partial_x(\mu\partial_x u_y)	
+		\rho -> desnsity in inhomogenous media: mu = mu(x)
+		in Homogeneous: elastic wave = acoustic wave 
+	Solution for mu = mu(x):
+		Turn the elastic wave equation to first-order partial differential equation
+			replace \partial_u by v
+			then take the \partial_t of sigma
+			You will have two coupled equations:
+				\rho \partial_t V = \partial_x \sigma
+					 \partial_t \sigma = \mu \partial_x v 
+			v, \sigma -> unknown
+			Hyperbolic equations
+			Velocity-stress formulation of the elastic wave equation 
+	Staggered Grids:
+		- centered scheme (central difference)
+		- staggerd scheme (in between points of central difference)
+		- grid increment of dx instead of 2dx 
+		- accuracy improvement
+	Grid staggering is entirely consistent!
+
+	---------------------------------------------
+	W4V8 - Python: Staggered Grids
+	- Jupyter Notebook
+	---------------------------------------------
+	W4V9 - Improving Numerical Accuracy
+	- Improving Numerical Accuracy
+		Acoustic Wave Equation
+		Elastic Wave Equation
+	- Advection equation
+		-> q(x,t) can be anything: tracer concentration, wavefield, etc.
+	Use the Euler Method:
+		Extrapolate in time.
+		diffusive scheme, not accurate
+	Predictor-corrector scheme: Heun's Method 
+		part of the Runge-Kutta Methods 
+		L(q,t) = k_1 = c \partial_x q(x,t)
+		k_1 -> Predictor
+		k_2 = L(q + dtq^t, t+dt)
+	Final extrapolation scheme:
+		k_1 = L(q,t)
+		k_2 = L(q + dt q^t,  t +dt)
+		q^t = dt L(q,t)+q(x,t)
+		q(x,t +dt) = q(x,t) + 1/2 dt (k1 + k2)
+	
+	Lax-Wendroff scheme
+	Cauchy-Kovalewsi procedure
+
+	High-order time derivatives of q(x,t) can be estimated.
+	ADER: Arbitray high or DER scheme
+
+	Implicit scheme, optimal operators - taxing in 2D or 3D, but more accurate and robust
+
+	---------------------------------------------
+	W4V10 - Wrap up
+	- Many things have been discussed about FDM
+		calculate derivatives
+		higher derivatices
+		high-order operators
+		acoustic wave equation in  1D and 2D 
+		staggered scheme 
+		Other coordinate system
+	main advantage: easy to develop
+	
+- 240523 - Numerical Methods in Python - Coursera - Week 5
+	---------------------------------------------
+	W5V1 - The Pseudospectral Method, function interpolation - trigonometric basis function
+	- FDM, but can we do better?
+		Transfrom Methods: Pseudospectral Method
+	- Strategies for:
+		function interpolation
+		exact interpolation on discrete grids
+	Important for e.g.
+		- Galerkin-type Methods
+		- Finite-Element Methods
+	Function interpolation
+		- approximate a known function f(x) by something else. Why?
+			-> Discontinuous Functions
+		Most phenomena in physics described by partial-differential equations:
+			-> Derivatives not defined at discontinuities.
+		f(x) \approx g_N(x) = \sum^N_{i=0} a_i \phi_i(x)
+			- \phi(x) - basis functions
+			- a_i - coefficients
+		What basis functions to use?
+		What are the coefficients?
+		\partial_x f(x) \approx \partial_x g_N(x) = \sum^N_{i=0} a_i \partial_x \phi_i(x)
+		Basis functions:
+			- sin(nx), cos(nx) - orthogonal basis functions
+				Orthogonality - span up a finite-dimensional vector space
+					-> orthogonal functions span up an infinite-dimensional function space
+			- Lagrange polynomials 
+			- Chebyshev polynomials
+	---------------------------------------------
+	W5V2 - Fourier Series - Examples
+	- How to use sin/cos functions to approximate the known function f(x)?
+	f(x) \approx g_N(x) = 1/2 a_0 + \sum^{n}_{k=1} a_k cos(kx) + b_k sin(kx)
+		Find a and b,
+		minimize ||f(x) - g_N(x)|| => [\int^b_a {f(x) - g_N(x)}^2 dx]^1/2 - least square method
+		a_k = 1/\pi \int^\pi_\pi f(x) cos(kx) dx k = 0,1,...,N
+		b_k = 1/\pi \int^\pi_\pi f(x) sin(kx) dx k = 1,..., N
+		a_0 = arithmetic average of f(x), interval of [-pi, pi] or [0, 2pi], function is periodic
+
+		Example: f(x) = x^2, find a_1 fourier coefficient
+			u = x^2
+			du = 2x dx
+			dv = cos x dx
+			v = sin x 
+			x^2 sin x - \int sin x 2 x dx
+			w = x
+			dw = dx
+			dt = sin x dx
+			t = -cos x
+			x^2 sin x - 2(x(-cos x) - \int -cos(x) dx)
+			x^2 sin x - 2(x(-cos x) - - sin(x)) | [0, 2pi]
+			-(1/pi) - 2{[ -2pi cos (2pi) ] - [- 0 cos (0)]}
+			a_1 = +4
+		
+		Another Example:
+			f\left(n\right)\ =\ n^{2}\ \left\{0\ \le\ n\ \le2\pi\right\}
+		Fourier Series approximation:
+			\frac{4\pi^{2}}{3}+\sum_{k=1}^{N}\left[\frac{4}{k}\cos\left(kx\right)-\frac{4\pi}{k}\sin\left(kx\right)\right]
+			at N = 26
+		Gibb's Phenomenon - The overshoot of Fourier Series for step like discontinuities.
+	---------------------------------------------
+	W5V3 - Discrete Fourier Series
+	- On computers, we need a finite set of points
+		What happens if we know f(x) only at a regular set of grid points?
+		x_k = 2pi k/N - total grid points
+		g^*_N = 1/2 a_0 + \sum^{N-1}_{k = 1} {a^*_k cos(kx) - b_x sin(kx)} + 1/2 a^*_N cos(Nx)
+			-> discrete world
+		Exact interpolation at grid points
+			g*_N = f(x_i)
+			Cardinal functions
+				f(x) = \sum^{N}_{k=1} f(x_k)c_k(x)
+				important for Galerkin type (FEM) Methods
+	---------------------------------------------
+	W5V4 - The Fourier Transform
+	- \partial^ {(n)}_x f_j = ~F^{-1} [(ik)^n F_n] = ~F^{-1} [(ik)^n ~F[f_j]]
+		-> exact to numerical precision
+		-> On a regular grid: method is better than finite-differences
+		-> try Fourier Derivatives in python
+	---------------------------------------------
+	W5V5 - Solving 1D/2D Wave Equation with Python
+	- Jupyter Notebook
+		1D Acoustic Wave Equation
+		Process: Extrapolation function for future nodes (left side of the equation) = apply fourier derivatives (right side)
+			~F(p_j) -> P^n_v -> -k^2P^n_v -> ~F^{-1}[-k^2P^n_v] = \partial^2_x p^n_j
+		- FDM - susceptible to numerical dispersion
+		- Fourier derivatives -> less numerical dispersion
+		1D -> 2D, same process 
+	---------------------------------------------
+	W5V6 - Convolutional Operators
+	- To understand Finite-Difference type operators
+		Operator in Wavenumber domain 
+			D(k) = ~F[d(x)]
+			P(k) = ~F[p(x)]
+		Derivatives in wavenumber/specral domain
+			d/dx p(x) = 1/\sqrt{2 pi} \int^{+ \inf}_{- inf} D(k)P(k)e^{ikx} dk
+		Convolution theorem:
+		~F^{-1}[D(k)P(k)] = d(x)*p(x)
+			Multiplication in the wavenumber domain = convolution in the space domain
+			What is D(k) in the space domain?
+		D(k) -> d(x)
+		~F^{-1}[D(k)] = d(x)
+			kmax = pi/dx - Nyquist Wavenumber
+			D(k) = ik[H(k+kmax) - H(kmax)]
+			d(x) = ~F^{-1} ik[H(k+kmax) - H(kmax)]
+			d(x) = 1/(pi x^2) [sin(kmax x) - kmax x cos (kmax x)] => continuous
+			discrete: 
+				d_n = 0  				for n = 0
+				d_n = (-1)^n / ndx  	for n /= 0
+			- Fourier Differential operator in space d(x), d(x)-discrete
+		band-limited function - fourier transform of the function is nonzero only in an interval of finite length.
+		Can we use the approac to calculate limited operators using the Fourier method?
+			Yes - by multiplying it by a gaussian function
+		D = ik
+		Exact = Gauss = FD 4pt => many grid points per wavelength,
+		less grid points, approaching nyquist wavenumber, results diverges
+		Elegant way of understanding:
+			- FD type operators as convolution operators
+			- the accuracy of a difference operator in the spectral domain
+		
+	---------------------------------------------
+	W5V7 - Chebyshev Polynomials - Derivatives
+	- We did:
+		function interpolation/approximation	
+			-> different choices for basis functions
+			=> Chebyshev Polynomials
+				trigonometric relation:
+					cos[(n+1)\phi] + cos[(n-1)\phi] = 2 cos(\phi) cos(n\phi)
+					cos(n\phi) = T_n(cos(\phi)) =T_n(x)
+						x \element [-1, 1]
+							T_0(x) = 1
+							T_1(x) = x
+							T_2(x) = 2x^2 - 1
+							T_3(x) = 4x^3 - 3x
+							T_4(x) = 8x^4 - 8x^2 - 1
+				Chebyshev polynomials allow us to approximate limited area functions!
+					- Implementation of boundary conditions
+		Chebyshev Polynomials to approximate functions:
+			- f(x) \approx g_N(x) = 1/2 c_0T_0(x) + \sum^{n}_{k=1} c_k T_k(x)
+			- Extremal values of CP: x_k = cos k\pi/n 
+				Chebyshev collocation points => exact interpolation at these points
+		Derivatives:
+			Derivative of a vector
+			Matrix-vector calculation
+			Summation convention applies
+				\partial_x u_i = D_ij u_j (with some piecewise conditions)
+	---------------------------------------------
+	W5V8 - Chebyshev Method - 1D Elastic Wave Equation
+	- Jupyter notebook
+	---------------------------------------------
+	W5V9 - Summary
+	- interpolation of a function
+		-> exact at regular grid points
+		-> exact derivative
+	=> used for solving partial differential equations
+		\partial^{2}_x p^n_j = ~F^{-1}[(ik)^2 P^n_v]
+		Problem: Assumption of a periodic function 
+			-> difficult to implement BC.
+	Fourier methods:
+		- exact derivatives
+		- BUT more FLOPs
+		FD method is faster BUT fourier method needs less grid points per wavelength
+		-> memory gain but more FLOPs
+	Problem of periodicity
+		-> Chebyshev polynomials
+			->	exact interpolation at collocation points |.... .  .   .     .          .          .     .    .   .  .  . . ....| 
+			-> unequidistant
+			-> problematic with time-dependent calculations due to CFL
+			but better implementation of boundary conditions
+		-> Limited area basis functions	-> important for Spectral-Element-Method
+
+- 240523 - Numerical Methods in Python - Coursera - Week 6
+	---------------------------------------------
+	W6V1 - The Finite Element Method - Static Elasticity
+	- FEM - one of the oldest numerical approaces in engineering and science
+			- originally in structural engineering
+			- Movement and forces of buildings
+				assembly
+					Forces inside a single beam 
+					conncetions to others (assembly)
+						Linear system of equations
+				- Arbitrary geometric complexities
+		- Maths of FEM
+			- 1D elastic wave equation
+				static case - no time-dependence
+					-> Poisson Equation
+	---------------------------------------------
+	W6V2 - Weak Form - Galerkin Principle
+	-	Poisson Equation
+		-\mu \partial^2_x u = f => strong form
+		Weak Form:
+			and solve it for the Poisson equation and elastic wave equation
+				=> solution is not absolutely accurate but is only valid with respect to "test" or "basis functions"
+			- 	-\mu \partial^2_x u v = f v, v = v basis function
+			- integrate:
+					\int_D -\mu \partial^2_x u v dx = \int_D f v dx
+					1. Integration by parts
+						-[\mu v \partial_x u] + \int_D \mu \partial_x u \partial_x v dx
+						a) u = 0 at the boundaries
+						b) \partial_x u = 0 at the boundaries - free-surface boundary condition
+								 -[\mu v \partial_x u] = 0
+								 => \mu \int_D \partial_x u \partial_x v dx = \int_D f v dx
+								 		-> Weak Form of the Poisson Equation
+										-> from continuous, make it discretized
+	- Discretization
+		u(x) \approx u_bar(x) = \sum^N_{i = 1} u_i \phi_i(x) -> linear combination of basis functions
+	---------------------------------------------
+	W6V3 - Solution Scheme
+	- \sum^N_{i = 1} u_i \mu \int_D \partial_x \phi_i \partial_x \phi_j dx = \int_D f \ phi_j dx
+			u = (u1 u2 ... uN).T
+			f = (\int_D f \phi_1 dx  \int_D f \phi_2 dx  ...  \int_D f \phi_N dx) - forces acting on element boundaries
+			K -> K_{ij} = \mu \int_D \partial_x \phi_i \partial_x \phi_j dx
+	Discretized version:
+		u_i K_{ij} = f_j 
+			-> Linear system of N equations
+			K^T u = F
+			=> solution of the static Finite-Element problem
+				u = (K^T)^-1 f
+				To conclude:
+					- conversion of infinite-D problems into finte-D problems
+					- basis fucntions limit the solution to linear functons inside N elements
+							-> solvable on computers
+							- how large is the system matrix K?
+									N^2 (N = number of degrees of freedom)
+									(K^T)^-1 -> if N is large
+							-> Outlook:
+									- structure of the stiffness matrix
+									- tools of linear algebra to find solutions for linear systems of equations
+			Q: Why is the integration of a differential equation and the approximation of the function by a 
+			finite sum over basis function useful in terms of its computational solution?
+			A: Because it reduces the dimensionality of the original problem from infinite  to finite-dimensional
+	---------------------------------------------
+	W6V4 - Boundary Conditions - System Matrices
+	- 
+	---------------------------------------------
+	W6V5 - relaxation Mthod - Python: Static Elasticity
+	-
+- 240610 - Numerical Methods in Python - Coursera - Week 7
+	---------------------------------------------
+	W7V1 - Dynamic Elasticity
+	- Dynamic case:
+		1D elastic wave equation
+		Discretization: u(x,t) \approx u_bar(x,t) = \sum_{i=1}^N u_i(t) \phi_i(x)
+		Find matrices and vectors -> Find solution of the system
+		u(t) - displacement
+		M -> M_ij => mass matrix
+		K -> K_ij => stiffness matrix
+		f -> f_j => forces
+	---------------------------------------------
+	W7V2 - Solution Algorithm - 1D Elastic Case
+	- \partial_t^2 uM + uK = f
+		- M^T \partial_t^2 u + K^T u = f
+	---------------------------------------------
+	W7V3 - Differentiation Matrices
+	-
+	---------------------------------------------
+	W7V4 - Python 1D Elastic Wave Equation
+	-
+	---------------------------------------------
+	W7V5 - h-adaptivity
+	-
+	---------------------------------------------
+	W7V6 - Shape Functions
+	-
+	---------------------------------------------
+	W7V7 - Dynamic elasticity - Summary
+	-
+- 240610 - Numerical Methods in Python - Coursera - Week 8
+	---------------------------------------------
+	W8V1 - Introduction - The Spectral-Element Method
+	- Combination of different methods
+	- very powerful numerical scheme
+	- heterogenous grid
+	- curved elements
+		- geometrical flexibility
+	Methods:
+		- Finite-Difference Approach for time extrapolation
+		- Galerkin principle (Finite-element)
+		- Inside the element:
+			Pseudospectral concepts
+			 - exact interpolation with spectral convergence	
+			 - diagonal mass matrix 
+			 Next - development of the weak form
+			 Lagrange interpolation
+			 numerical integration
+	---------------------------------------------
+	W8V2 - Matrix formulation
+	- M \partial_t^2 u(t) + Ku(t) = f(t)
+	---------------------------------------------
+	W8V3 - Element Level
+	- Forward Mapping: x(\xi) = Fe(\xi) = x_e + h_e (\xi + 1)/2
+		for \xi = -1, x(\xi) = x_e
+		for \xi = 1, x(\xi) = x_e + h_e
+	- Inverse Mapping
+		\xi(x) = 2(x - x_e)/h_e - 1
+		for x = x_e -> \xi(x_e) = -1
+		for x = x_e + h_e -> \xi(x_e + h_e) = 1
+	Integration with local coordinates
+	 x -> \xi
+	  \int_D_e f(x) dx -> \int_{-1}^{1} f(\xi) dx/d\xi d\xi (dx/d\xi) the Jacobian
+	  Our Jacobian: dx/d\xi = h_e/2
+	  Inverse Jacobian: d\xi/dx = 2/h_e
+	---------------------------------------------
+	W8V4 - lagrange interpolation
+	- Function interpolation
+		Limited area inside an element
+		Lagrange Polynomials
+			Gauss-Lobatto-Legendre Points - GLL points
+		N is a simulation parameters
+		Densification of grid points at boundaries can be problematic
+			-> Courant Criterion
+				Time step depends on the smallest distance
+			-> too expensive
+		In realistic simulations: N <= 4
+			- 5 collocation points,
+			- 4 distances
+
+			u(x) = u_1 l_1^1 (xi) + u_2 l_2^2 (xi) + u_3 l_3^3 (xi)
+				 = (u, E) = (2 , 1), (2, 3), (1, 0)
+				 = u_0 [(E - E1)(E - E2) / (E0 - E1)(E0 - E2) ] +
+				   u_1 [(E - E0)(E - E2) / (E1 - E0)(E1 - E2) ] +
+				   u_2 [(E - E0)(E - E1) / (E2 - E0)(E2 - E1) ]
+				 = 2 [(E - E1)(E - E2) / (E0 - E1)(E0 - E2) ] +
+				   2 [(E - E0)(E - E2) / (E1 - E0)(E1 - E2) ] +
+				   1 [(E - E0)(E - E1) / (E2 - E0)(E2 - E1) ]
+				 = 2 [(E - 3)(E - 0) / (1 - 3)(1 - 0) ] +
+				   2 [(E - 1)(E - 0) / (3 - 1)(3 - 0) ] +
+				   1 [(E - 1)(E - 3) / (0 - 1)(0 - 3) ]
+				 = (2E^2 - 6E)/(-2) +  (2E^2 - 2E)/6 + (E^2 - 4E + 3)/3
+				 = -E^2 + 3E + (1/3)E^2 - (1/3)E + (1/3)E^2 - (4/3)E + 1
+				 = -1/3 E^2 + 4/3 E + 1
+				 = -1/3 (E^2 - 4E - 3)
+	---------------------------------------------
+	W8V5 - Python - Lagrange Interpolation
+	- Jupyter Lab
+	---------------------------------------------
+	W8V6 - Numerical Integration
+	- We only know \rho(\xi) and \mu(\xi) at the collocation points (GLL points)
+	- Gauss quadrature 
+	---------------------------------------------
+	W8V7 - Python Numerical Integration
+	- Jupyter Lab
+	
+- 240610 - Numerical Methods in Python - Coursera - Week 9
+	---------------------------------------------
+	W9V1 - Lagrange Derivative - Legendre Polynomials
+	-
+	---------------------------------------------
+	W9V2 - System of Equations - Element Level
+	-
+	---------------------------------------------
+	W9V3 - Global Assembly
+	-
+	---------------------------------------------
+	W9V4 - Python 1D - Homogeneous case
+	-
+	---------------------------------------------
+	W9V5 - Python 1D - heterogenous case
+	-
+	---------------------------------------------
+	W9V6 - Convergence Test
+	-
+	---------------------------------------------
+	W9V7 - Wrap Up
+	-
