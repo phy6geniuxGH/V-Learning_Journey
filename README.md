@@ -2,3 +2,4 @@
 - Deep Learning
 - Natural Language Processing
 - Neural Networks
+- Data Engineering
