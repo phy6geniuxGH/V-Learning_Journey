@@ -3,3 +3,4 @@
 - Natural Language Processing
 - Neural Networks
 - Data Engineering
+- Physics calculations
