@@ -4,3 +4,4 @@
 - Neural Networks
 - Data Engineering
 - Physics calculations
+- Data Analytics
