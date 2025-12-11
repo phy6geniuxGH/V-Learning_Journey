@@ -6,3 +6,4 @@
 - Physics calculations
 - Data Analytics
 - Machine Learning
+- Data Science
