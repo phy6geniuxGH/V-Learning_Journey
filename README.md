@@ -10,4 +10,8 @@
 - Software Engineering
 - System Design
 - End-to-End Machine Learning Production Deployment
-- Ai-instructed Lessons
+# Textbooks
+- Machine Learning Systems
+- Python Crash Course
+# Others
+- AI-instructed Lessons
