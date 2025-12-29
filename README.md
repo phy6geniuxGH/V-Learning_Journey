@@ -15,3 +15,4 @@
 - Python Crash Course
 # Others
 - AI-instructed Lessons
+- roadmap.sh
