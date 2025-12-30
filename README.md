@@ -13,6 +13,7 @@
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
+- Advanced Python Programming
 # Others
 - AI-instructed Lessons
 - roadmap.sh
