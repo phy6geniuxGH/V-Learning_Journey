@@ -14,6 +14,7 @@
 - Machine Learning Systems
 - Python Crash Course
 - Advanced Python Programming
+- Data Science/Machine Learning Book
 # Others
 - AI-instructed Lessons
 - roadmap.sh
