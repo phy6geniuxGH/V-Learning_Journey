@@ -10,6 +10,7 @@
 - Software Engineering
 - System Design
 - End-to-End Machine Learning Production Deployment
+- Pytorch
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
