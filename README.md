@@ -13,6 +13,7 @@
 - Pytorch
 - Databricks
 - Tensorflow
+- Time Series Forecasting
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
