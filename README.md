@@ -12,6 +12,7 @@
 - End-to-End Machine Learning Production Deployment
 - Pytorch
 - Databricks
+- Tensorflow
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
