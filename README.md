@@ -6,6 +6,7 @@
 - Physics calculations
 - Data Analytics
 - Machine Learning
+- Advanced Machine Learning
 - Data Science
 - Software Engineering
 - System Design
@@ -14,6 +15,7 @@
 - Databricks
 - Tensorflow
 - Time Series Forecasting
+- Generative AI
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
