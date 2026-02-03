@@ -21,6 +21,7 @@
 - Python Crash Course
 - Advanced Python Programming
 - Data Science/Machine Learning Book
+- Quantitative Methods
 # Others
 - AI-instructed Lessons
 - roadmap.sh
