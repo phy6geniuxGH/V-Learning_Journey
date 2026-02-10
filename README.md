@@ -22,6 +22,7 @@
 - Advanced Python Programming
 - Data Science/Machine Learning Book
 - Quantitative Methods
+- Automating the Boring Stuff with Python
 # Others
 - AI-instructed Lessons
 - roadmap.sh
