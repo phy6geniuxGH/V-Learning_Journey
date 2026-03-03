@@ -17,6 +17,7 @@
 - Time Series Forecasting
 - Generative AI
 - Agentic Engineering
+- Git By Bit
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
