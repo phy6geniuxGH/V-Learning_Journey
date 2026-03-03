@@ -16,6 +16,7 @@
 - Tensorflow
 - Time Series Forecasting
 - Generative AI
+- Agentic Engineering
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
