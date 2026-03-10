@@ -18,6 +18,8 @@
 - Generative AI
 - Agentic Engineering
 - Git By Bit
+- ComfyUI
+- n8n
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
