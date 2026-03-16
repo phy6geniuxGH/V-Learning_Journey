@@ -21,6 +21,9 @@
 - ComfyUI
 - n8n
 - Data Analytics
+- Agentic Orchestration
+- Regex
+  
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
