@@ -20,6 +20,7 @@
 - Git By Bit
 - ComfyUI
 - n8n
+- Data Analytics
 # Textbooks
 - Machine Learning Systems
 - Python Crash Course
