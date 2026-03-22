@@ -31,6 +31,8 @@
 - Data Science/Machine Learning Book
 - Quantitative Methods
 - Automating the Boring Stuff with Python
+- Nature of Code by Daniel Shiffman
+- Godot Shaders Bible
 # Others
 - AI-instructed Lessons
 - roadmap.sh
