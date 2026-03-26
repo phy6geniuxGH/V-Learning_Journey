@@ -12,7 +12,8 @@
 - System Design
 - End-to-End Machine Learning Production Deployment
 - Pytorch
-- Databricks
+- Databricks ML
+- Databricks Advanced ML
 - Tensorflow
 - Time Series Forecasting
 - Generative AI
