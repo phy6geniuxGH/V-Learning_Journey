@@ -24,6 +24,7 @@
 - Data Analytics
 - Agentic Orchestration
 - Regex
+- Nature of Code
   
 # Textbooks
 - Machine Learning Systems
