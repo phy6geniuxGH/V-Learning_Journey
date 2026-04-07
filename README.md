@@ -25,6 +25,7 @@
 - Agentic Orchestration
 - Regex
 - Nature of Code
+- The Odin Project
   
 # Textbooks
 - Machine Learning Systems
