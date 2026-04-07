@@ -26,6 +26,7 @@
 - Regex
 - Nature of Code
 - The Odin Project
+- FreeCodeCamp
   
 # Textbooks
 - Machine Learning Systems
