@@ -27,6 +27,7 @@
 - Nature of Code
 - The Odin Project
 - FreeCodeCamp
+- AWS AI & ML Scholarship
   
 # Textbooks
 - Machine Learning Systems
