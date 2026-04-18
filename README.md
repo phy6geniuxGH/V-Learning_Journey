@@ -28,6 +28,9 @@
 - The Odin Project
 - FreeCodeCamp
 - AWS AI & ML Scholarship
+- DataCamp Associate Data Scientist Track
+- DataCamp Machine Learning Engineer
+- DataCamp AI Engineer
   
 # Textbooks
 - Machine Learning Systems
