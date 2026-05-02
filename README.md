@@ -31,7 +31,8 @@
 - DataCamp Associate Data Scientist Track
 - DataCamp Machine Learning Engineer
 - DataCamp AI Engineer
-- Udacity AWS AI Practitioner Challenge 
+- Udacity AWS AI Practitioner Challenge
+- Microsoft Azure 
   
 # Textbooks
 - Machine Learning Systems
