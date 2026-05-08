@@ -32,7 +32,10 @@
 - DataCamp Machine Learning Engineer
 - DataCamp AI Engineer
 - Udacity AWS AI Practitioner Challenge
-- Microsoft Azure 
+- Microsoft Azure
+- APIs
+- RAGs
+- LLMs
   
 # Textbooks
 - Machine Learning Systems
