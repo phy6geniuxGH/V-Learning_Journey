@@ -36,6 +36,7 @@
 - APIs
 - RAGs
 - LLMs
+- MCPs
   
 # Textbooks
 - Machine Learning Systems
