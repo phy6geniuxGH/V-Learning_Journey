@@ -47,8 +47,14 @@
 - Automating the Boring Stuff with Python
 - Nature of Code by Daniel Shiffman
 - Godot Shaders Bible
+
 # Others
 - AI-instructed Lessons
 - roadmap.sh
 - Claude Sessions
 - Codex Sessions
+
+# Challenges
+- LeetCode
+- PixelBank
+- StrataScratch
