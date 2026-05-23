@@ -58,3 +58,5 @@
 - LeetCode
 - PixelBank
 - StrataScratch
+- TensorTonic
+- Neuprise
