@@ -53,6 +53,7 @@
 - roadmap.sh
 - Claude Sessions
 - Codex Sessions
+- Gemini Sessions
 
 # Challenges
 - LeetCode
