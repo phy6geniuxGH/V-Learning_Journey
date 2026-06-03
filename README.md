@@ -14,6 +14,7 @@
 - Pytorch
 - Databricks ML
 - Databricks Advanced ML
+- Databrics for Data Science and Engineering
 - Tensorflow
 - Time Series Forecasting
 - Generative AI
