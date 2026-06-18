@@ -38,6 +38,7 @@
 - RAGs
 - LLMs
 - MCPs
+- OKF (Open Knowledge Format)
   
 # Textbooks
 - Machine Learning Systems
