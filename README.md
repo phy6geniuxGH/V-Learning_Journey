@@ -40,6 +40,7 @@
 - MCPs
 - OKF (Open Knowledge Format)
 - Gitflow
+- Jenkins
   
 # Textbooks
 - Machine Learning Systems
