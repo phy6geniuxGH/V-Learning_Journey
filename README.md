@@ -39,6 +39,7 @@
 - LLMs
 - MCPs
 - OKF (Open Knowledge Format)
+- Gitflow
   
 # Textbooks
 - Machine Learning Systems
