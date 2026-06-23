@@ -41,6 +41,7 @@
 - OKF (Open Knowledge Format)
 - Gitflow
 - Jenkins
+- Agent Loops
   
 # Textbooks
 - Machine Learning Systems
