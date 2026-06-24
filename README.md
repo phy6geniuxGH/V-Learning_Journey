@@ -33,15 +33,6 @@
 - DataCamp Machine Learning Engineer
 - DataCamp AI Engineer
 - Udacity AWS AI Practitioner Challenge
-- Microsoft Azure
-- APIs
-- RAGs
-- LLMs
-- MCPs
-- OKF (Open Knowledge Format)
-- Gitflow
-- Jenkins
-- Agent Loops
   
 # Textbooks
 - Machine Learning Systems
@@ -68,3 +59,14 @@
 - TensorTonic
 - Neuprise
 - Regex101
+
+# Tech Ideas
+- Microsoft Azure
+- APIs
+- RAGs
+- LLMs
+- MCPs
+- OKF (Open Knowledge Format)
+- Gitflow
+- Jenkins
+- Agent Loops
