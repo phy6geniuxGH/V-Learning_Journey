@@ -70,3 +70,7 @@
 - Gitflow
 - Jenkins
 - Agent Loops
+- Prompt Engineering
+- Context Engineering
+- Harness Engineering
+- Loop Engineering
