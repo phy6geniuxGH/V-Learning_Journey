@@ -43,7 +43,8 @@
 - Automating the Boring Stuff with Python
 - Nature of Code by Daniel Shiffman
 - Godot Shaders Bible
-- Object Oriented Programming in Python
+- Object-Oriented Programming in Python
+- Real World Python
 
 # Others
 - AI-instructed Lessons
