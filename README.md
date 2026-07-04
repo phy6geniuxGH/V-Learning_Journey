@@ -8,6 +8,7 @@
 - Machine Learning
 - Advanced Machine Learning
 - Data Science
+- Data Architecture
 - Software Engineering
 - System Design
 - End-to-End Machine Learning Production Deployment
