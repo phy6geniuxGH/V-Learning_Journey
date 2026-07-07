@@ -47,6 +47,7 @@
 - Godot Shaders Bible
 - Object-Oriented Programming in Python
 - Real World Python
+- Developer Guide to AI
 
 # Others
 - AI-instructed Lessons
