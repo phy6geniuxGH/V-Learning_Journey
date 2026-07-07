@@ -34,6 +34,7 @@
 - DataCamp Machine Learning Engineer
 - DataCamp AI Engineer
 - Udacity AWS AI Practitioner Challenge
+- LLM Architecture
   
 # Textbooks
 - Machine Learning Systems
