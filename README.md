@@ -35,6 +35,7 @@
 - DataCamp AI Engineer
 - Udacity AWS AI Practitioner Challenge
 - LLM Architecture
+- Udemy AI Engineer Course Track
   
 # Textbooks
 - Machine Learning Systems
