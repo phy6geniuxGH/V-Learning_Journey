@@ -35,7 +35,8 @@
 - DataCamp AI Engineer
 - Udacity AWS AI Practitioner Challenge
 - LLM Architecture
-- Udemy AI Engineer Course Track: Agentic AI
+- Udemy AI Engineer Course Track: Agentic AI Engineer
+- Udemy AI Engineer Course Track: LLM Engineer
   
 # Textbooks
 - Machine Learning Systems
