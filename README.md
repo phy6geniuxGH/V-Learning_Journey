@@ -37,6 +37,7 @@
 - LLM Architecture
 - Udemy AI Engineer Course Track: Agentic AI Engineer
 - Udemy AI Engineer Course Track: LLM Engineer
+- Udemy AI Engineer Course Track: n8n Engineer
   
 # Textbooks
 - Machine Learning Systems
