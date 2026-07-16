@@ -38,6 +38,7 @@
 - Udemy AI Engineer Course Track: Agentic AI Engineer
 - Udemy AI Engineer Course Track: LLM Engineer
 - Udemy AI Engineer Course Track: n8n Engineer
+- Udemy AI Engineer Course Track: Production Track
   
 # Textbooks
 - Machine Learning Systems
