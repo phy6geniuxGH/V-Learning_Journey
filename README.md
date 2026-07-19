@@ -39,6 +39,7 @@
 - Udemy AI Engineer Course Track: LLM Engineer
 - Udemy AI Engineer Course Track: n8n Engineer
 - Udemy AI Engineer Course Track: Production Track
+- Small Language Models
   
 # Textbooks
 - Machine Learning Systems
