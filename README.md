@@ -40,6 +40,7 @@
 - Udemy AI Engineer Course Track: n8n Engineer
 - Udemy AI Engineer Course Track: Production Track
 - Small Language Models
+- Computational Physics 
   
 # Textbooks
 - Machine Learning Systems
