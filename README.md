@@ -69,6 +69,8 @@
 - TensorTonic
 - Neuprise
 - Regex101
+- ProjectEuler
+- CodeForces
 
 # Tech Ideas
 - Microsoft Azure
