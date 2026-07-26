@@ -42,6 +42,7 @@
 - Small Language Models
 - Computational Physics
 - Gitflow
+- 
   
 # Textbooks
 - Machine Learning Systems
@@ -92,3 +93,4 @@
 - Context Management
 - Unstructured Data pipeline
 - Graph Engineering
+- Git Collaboration
