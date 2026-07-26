@@ -42,7 +42,7 @@
 - Small Language Models
 - Computational Physics
 - Gitflow
-- 
+- Scaling Law
   
 # Textbooks
 - Machine Learning Systems
