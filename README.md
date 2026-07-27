@@ -43,6 +43,7 @@
 - Computational Physics
 - Gitflow
 - Scaling Law
+- Modeling and Simulations with Python
   
 # Textbooks
 - Machine Learning Systems
