@@ -96,3 +96,4 @@
 - Graph Engineering
 - Git Collaboration
 - Agentic Context Cooperation
+- Agent Harness Protocol
