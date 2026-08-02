@@ -74,6 +74,7 @@
 - Regex101
 - ProjectEuler
 - CodeForces
+- Textbook Items
 
 # Tech Ideas
 - Microsoft Azure
