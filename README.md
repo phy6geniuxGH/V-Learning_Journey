@@ -64,6 +64,8 @@
 - Claude Sessions
 - Codex Sessions
 - Gemini Sessions
+- Genie Sessions
+- CoCo Sessions
 
 # Challenges
 - LeetCode
