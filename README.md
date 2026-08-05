@@ -44,6 +44,7 @@
 - Gitflow
 - Scaling Law
 - Modeling and Simulations with Python
+- Monte Carlo Simulations
   
 # Textbooks
 - Machine Learning Systems
