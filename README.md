@@ -45,6 +45,8 @@
 - Scaling Law
 - Modeling and Simulations with Python
 - Monte Carlo Simulations
+- Databricks Application Deployment
+- Snowflake Application Deployment
   
 # Textbooks
 - Machine Learning Systems
