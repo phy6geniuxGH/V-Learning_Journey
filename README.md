@@ -103,3 +103,4 @@
 - Git Collaboration
 - Agentic Context Cooperation
 - Agent Harness Protocol
+- Obsidian Notes
