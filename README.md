@@ -60,6 +60,7 @@
 - Object-Oriented Programming in Python
 - Real World Python
 - Developer Guide to AI
+- OpenAI Academy
 
 # Others
 - AI-instructed Lessons
