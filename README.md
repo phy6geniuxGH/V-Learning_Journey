@@ -47,6 +47,7 @@
 - Monte Carlo Simulations
 - Databricks Application Deployment
 - Snowflake Application Deployment
+- Udacity AI Agentic Engineering
   
 # Textbooks
 - Machine Learning Systems
