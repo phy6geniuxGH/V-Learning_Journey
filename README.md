@@ -106,3 +106,4 @@
 - Agentic Context Cooperation
 - Agent Harness Protocol
 - Obsidian Notes
+- Markdown Memories
