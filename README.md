@@ -102,6 +102,7 @@
 - Context Management
 - Unstructured Data pipeline
 - Graph Engineering
+- Agentic Harness and Graphs
 - Git Collaboration
 - Agentic Context Cooperation
 - Agent Harness Protocol
