@@ -48,6 +48,7 @@
 - Databricks Application Deployment
 - Snowflake Application Deployment
 - Udacity AI Agentic Engineering
+- Physics-informed Neural Networks
   
 # Textbooks
 - Machine Learning Systems
