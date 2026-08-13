@@ -49,6 +49,9 @@
 - Snowflake Application Deployment
 - Udacity AI Agentic Engineering
 - Physics-informed Neural Networks
+- AWS Skillbuilder
+- Snowflake Tutorials
+- Databricks Tutorials
   
 # Textbooks
 - Machine Learning Systems
