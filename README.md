@@ -55,6 +55,7 @@
   
 # Textbooks
 - Machine Learning Systems
+- Machine Learning Operations
 - Python Crash Course
 - Advanced Python Programming
 - Data Science/Machine Learning Book
