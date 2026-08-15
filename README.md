@@ -94,7 +94,7 @@
 - LLMs
 - MCPs
 - OKF (Open Knowledge Format)
-- Gitflow
+- Gitflow and Github Actions
 - Jenkins
 - Agent Loops
 - Prompt Engineering
