@@ -52,6 +52,7 @@
 - AWS Skillbuilder
 - Snowflake Tutorials
 - Databricks Tutorials
+- Linux Commands
   
 # Textbooks
 - Machine Learning Systems
