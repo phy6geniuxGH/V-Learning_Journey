@@ -112,5 +112,5 @@
 - Git Collaboration
 - Agentic Context Cooperation
 - Agent Harness Protocol
-- Obsidian Notes
+- Obsidian Notes + AI Agent in Terminal
 - Markdown Memories
