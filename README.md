@@ -53,6 +53,7 @@
 - Snowflake Tutorials
 - Databricks Tutorials
 - Linux Commands
+- Uplimit Courses
   
 # Textbooks
 - Machine Learning Systems
