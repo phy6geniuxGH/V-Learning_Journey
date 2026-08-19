@@ -23,6 +23,7 @@
 - Git By Bit
 - ComfyUI
 - n8n
+- GoHighLevel
 - Data Analytics
 - Agentic Orchestration
 - Regex
