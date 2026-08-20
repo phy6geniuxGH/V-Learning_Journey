@@ -70,6 +70,7 @@
 - Real World Python
 - Developer Guide to AI
 - OpenAI Academy
+- Claude Academy
 
 # Others
 - AI-instructed Lessons
