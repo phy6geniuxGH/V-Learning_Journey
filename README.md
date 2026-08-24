@@ -1,5 +1,6 @@
 # Various MOOC Courses
 - Deep Learning
+- Convolutional Neural Networks
 - Natural Language Processing
 - Neural Networks
 - Data Engineering
