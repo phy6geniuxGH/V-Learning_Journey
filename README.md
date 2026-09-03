@@ -119,3 +119,4 @@
 - Obsidian Notes + AI Agent in Terminal
 - Markdown Memories
 - Application Engineering
+- Personal and AI knowledge management
